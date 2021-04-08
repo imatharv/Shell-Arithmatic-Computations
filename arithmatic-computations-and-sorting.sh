@@ -74,3 +74,24 @@ function sortDESC(){
 }
 
 sortDESC ${results[@]}
+
+#Use-case-9 Sorting the array values in ascending order
+function sortASC(){
+        arrayASC=("$@")
+        for (( i=0;i<$(( ${#arrayASC[@]} ));i++ ))
+        do
+                for (( j=i+1;j<${#arrayASC[@]};j++ ))
+                do
+                        if (( ${arrayASC[$i]}>${arrayASC[$j]} ))
+                        then
+                                temporary=${arrayASC[$i]}
+                                arrayASC[i]=${arrayASC[$j]}
+                                arrayASC[j]=$temporary
+                        fi
+                done
+        done
+        echo "Array in ascending order= ${arrayASC[@]}"
+}
+
+sortASC ${results[@]}
+
