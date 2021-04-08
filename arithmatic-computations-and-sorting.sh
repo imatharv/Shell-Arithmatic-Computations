@@ -44,3 +44,13 @@ for key in "${!results[@]}"
 do
 	echo "$key => ${results[$key]}";
 done
+
+#Use-case-7 Storing the result values into an array from a dictionary/associative array
+index=0
+for value in ${results[@]}
+do
+	resultArray[$index]=${results[$value]}
+	index=$(($index+1))
+done
+
+echo "Result array= ${resultArray[@]}"
