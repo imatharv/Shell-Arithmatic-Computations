@@ -16,3 +16,6 @@ echo "Value of a+b*c= $result1"
 result2=$(($a*$b+$c))
 echo "Value of a*b+c= $result2"
 
+#Use-case-4
+result3=$(($c+$a/$b))
+echo "Value of c+a/b= $result3"
