@@ -54,3 +54,23 @@ do
 done
 
 echo "Result array= ${resultArray[@]}"
+
+#Use-case-8 Sorting the array values in descending order
+function sortDESC(){
+	arrayDESC=("$@")
+	for (( i=0;i<$(( ${#arrayDESC[@]} ));i++ ))
+	do
+		for (( j=i+1;j<${#arrayDESC[@]};j++ ))
+		do
+			if (( ${arrayDESC[$i]}<${arrayDESC[$j]} ))
+			then
+				temporary=${arrayDESC[$i]}
+				arrayDESC[i]=${arrayDESC[$j]}
+				arrayDESC[j]=$temporary
+			fi
+		done
+	done
+	echo "Array in descending order= ${arrayDESC[@]}"
+}
+
+sortDESC ${results[@]}
