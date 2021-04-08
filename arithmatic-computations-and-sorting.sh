@@ -19,3 +19,7 @@ echo "Value of a*b+c= $result2"
 #Use-case-4
 result3=$(($c+$a/$b))
 echo "Value of c+a/b= $result3"
+
+#Use-case-5
+result4=$(($a%$b+$b))
+echo "Value of a%b+c= $result4"
